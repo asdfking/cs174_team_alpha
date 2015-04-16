@@ -10,9 +10,18 @@
     <script src="carAnimation.js"></script>
     <script src="inputValidation.js"></script>
 
+<<<<<<< HEAD
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	
+=======
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link href="jquery-ui-1.11.4.custom/jquery-ui.min.css" rel="stylesheet"/>
+    <link href="jquery-ui-1.11.4.custom/jquery-ui.theme.min.css" rel="stylesheet"/>
+    <link href="jquery-ui-1.11.4.custom/jquery-ui.structure.min.css" rel="stylesheet"/>
+    <script src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+>>>>>>> origin/master
 
 
 
@@ -32,6 +41,10 @@
 
       $(function() {
       $( "#selectmenu" ).selectmenu();
+      });
+      
+      $(function() {
+      $( "#selecColor" ).selectmenu();
       });
     </script>
 	<style>
@@ -124,13 +137,13 @@
             </select>
             <p>
               <label>Color:</label>
-              <select name="color" class="ui-selectmenu-button ui-widget ui-state-default ui-corner-top">
-                <option name="color" value="white"/> White
-                <option name="color" value="black"/> Black
-                <option name="color" value="grey"/> Grey
-                <option name="color" value="pink"/> Pink
-                <option name="color" value="purple"/> Purple
-                <option name="color" value="brown"/> Brown
+              <select name="color" class="ui-selectmenu-button ui-widget ui-state-default ui-corner-top" id="selectColor"> <span class="ui-icon ui-icon-triangle-1-s"></span>
+                <option name="color" value="white">White</option>
+                <option name="color" value="black">Black</option>
+                <option name="color" value="grey">Grey</option>
+                <option name="color" value="pink">Pink</option>
+                <option name="color" value="purple">Purple</option>
+                <option name="color" value="brown">Brown</option>
                 <option  selected disabled hidden value=''/>
               </select>
             </p>
@@ -138,8 +151,9 @@
         </div>
 
         <div class="submitbutton">
-          <p><input type="submit" /*style="width:200px; height:200px;"*/ value="Submit"/></p>
+          <p><input type="submit" style="width:200px", "height:200px"; value="Submit"/></p>
         </div>
+<<<<<<< HEAD
 		
  
 <select name="effects" id="effectTypes">
@@ -170,4 +184,19 @@
 </form>
 </div>
 </body>
+=======
+
+      </form>
+
+      <div id="dragCar">
+        <canvas       id = "canvas"
+                      onclick = "changeBackground()"
+                      width = "300"
+                      height = "200"
+                      <p> Your browser does not support the canvas tag.</p>
+                      />
+      </div>
+    </div>
+  </body>
+>>>>>>> origin/master
 </html>
