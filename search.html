@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>DMV</title>
+    <link rel="shortcut icon" href="http://files.softicons.com/download/transport-icons/car-icon-by-nishad2m8/ico/Car.ico">
+    <link rel="stylesheet" type="text/css" href="layout.css" media="screen"/>
+    <script src="script.js"></script>
+    <script src="carAnimation.js"></script>
+    <script src="inputValidation.js"></script>
+
+    <!-- <script src="//code.jquery.com/jquery-1.10.2.js"></script> -->
+    <!-- <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
+    <link href="jquery-ui-1.11.4.custom/jquery-ui.min.css" rel="stylesheet">
+    <link href="jquery-ui-1.11.4.custom/jquery-ui.theme.min.css" rel="stylesheet">
+    <link href="jquery-ui-1.11.4.custom/jquery-ui.structure.min.css" rel="stylesheet">
+    <script src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+
+
+
+
+    <style>
+      #draggable { width: 300px; height: 200px; padding: 0.5em; }
+    </style>
+    <script>
+      $(function() {
+      $( "#draggable" ).draggable();
+      });
+
+      $(function() {
+      $( "#slider" ).slider();
+      });
+      
+      $(function() {
+      $( "#selectmenu" ).selectmenu();
+      });
+    </script>
+
+
+  </head>
+
+  <body  onload = "drawStaticCar()">
+    <header>
+      <h1 class="mainheader">Automobile Database</h1>
+
+    </header>
+
+    <div class="searchblock">
+      <form action="search.php" method="get">
+
+        <!--
+            <legend>Car Information Input - Fill all parameters to search for specific car or leave all blank to see the whole database</legend>
+            -->
+        <div class="makemodelyear" >
+          <fieldset>
+            <p>
+              <label>Make:</label>
+              <input name="make" type="text" pattern="[a-zA-Z]+"/>
+            </p>
+
+            <p>
+              <label>Model:</label>
+              <input name="model" type="text" pattern="[a-zA-Z]+"/>
+            </p>
+
+            <p>
+              <label>Year:</label>
+              <input name="year" type="text" pattern="\d{4}"/>
+            </p>
+
+            <p>
+              <label>ID:</label>
+              <input name="id" type="text" pattern="\d{7}"/>
+            </p>
+          </fieldset>
+        </div>
+        <div class="typecolor">
+          <fieldset>
+            <label>Types of car:</label>
+            <select name="type" class="ui-selectmenu-button ui-widget ui-state-default ui-corner-top" id="selectmenu"> <span class="ui-icon ui-icon-triangle-1-s"></span>
+              <option name="checkbox" name="hybrid" value="hybrid">Hybrid</option>
+              <option name="checkbox" name="sport" value="sport">Sport</option>
+              <option name="checkbox" name="luxury" value="luxury">Luxury</option>
+              <option name="checkbox" name="economic" value="economic">Economic</option>
+              <option  selected disabled hidden value=''/>
+            </select>
+            <p>
+              <label>Color:</label>
+              <select name="color" class="ui-selectmenu-button ui-widget ui-state-default ui-corner-top">
+                <option name="color" value="white"/> White
+                <option name="color" value="black"/> Black
+                <option name="color" value="grey"/> Grey
+                <option name="color" value="pink"/> Pink
+                <option name="color" value="purple"/> Purple
+                <option name="color" value="brown"/> Brown
+                <option  selected disabled hidden value=''/>
+              </select>
+            <p>
+          </fieldset>
+        </div>
+
+        <div class="submitbutton">
+          <p><input type="submit" /*style="width:200px; height:200px;"*/ value="Submit"/></p>
+        </div>
+
+        <div id="draggable">
+          <canvas       id = "canvas"
+                        onclick = "changeBackground()"
+                        width = "300"
+                        height = "200"
+                        <p> Your browser does not support the canvas tag.</p>
+</canvas>
+</div>
+</form>
+</div>
+</body>
+</html>
