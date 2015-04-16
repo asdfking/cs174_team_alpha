@@ -1,109 +1,172 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  
+
   <head>
     <meta charset="UTF-8">
     <title>DMV</title>
     <link rel="shortcut icon" href="http://files.softicons.com/download/transport-icons/car-icon-by-nishad2m8/ico/Car.ico">
     <link rel="stylesheet" type="text/css" href="layout.css" media="screen"/>
-    <script src="script.js"></script> 
+    <script src="script.js"></script>
     <script src="carAnimation.js"></script>
-    <script src "inputValidation.js"></script>
-	
-	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="inputValidation.js"></script>
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-	<style>
-  #draggable { width: 300px; height: 200px; padding: 0.5em; }
-  </style>
+	
+
+
+
+
+    <style>
+      #draggable { width: 300px; height: 200px; padding: 0.5em; }
+    </style>
+    
   <script>
   $(function() {
     $( "#draggable" ).draggable();
   });
-  
+
+      $(function() {
+      $( "#slider" ).slider();
+      });
+
+      $(function() {
+      $( "#selectmenu" ).selectmenu();
+      });
+    </script>
+	<style>
+    .toggler { width: 500px; height: 200px; position: relative; }
+    #button { padding: .5em 1em; text-decoration: none; }
+    #effect { width: 240px; height: 135px; padding: 0.4em; position: relative; }
+    #effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+    .ui-effects-transfer { border: 2px dotted gray; }
+  </style>
+  <script>
   $(function() {
-    $( "#slider" ).slider();
+    // run the currently selected effect
+    function runEffect() {
+      // get effect type from
+      var selectedEffect = $( "#effectTypes" ).val();
+ 
+      // most effect types need no options passed by default
+      var options = {};
+      // some effects have required parameters
+      if ( selectedEffect === "scale" ) {
+        options = { percent: 0 };
+      } else if ( selectedEffect === "transfer" ) {
+        options = { to: "#button", className: "ui-effects-transfer" };
+      } else if ( selectedEffect === "size" ) {
+        options = { to: { width: 200, height: 60 } };
+      }
+ 
+      // run the effect
+      $( "#effect" ).effect( selectedEffect, options, 500, callback );
+    };
+ 
+    // callback function to bring a hidden box back
+    function callback() {
+      setTimeout(function() {
+        $( "#effect" ).removeAttr( "style" ).hide().fadeIn();
+      }, 1000 );
+    };
+ 
+    // set effect from select menu value
+    $( "#button" ).click(function() {
+      runEffect();
+      return false;
+    });
   });
   </script>
-	
-  
-  </head>  
-  
+
+  </head>
+
   <body  onload = "drawStaticCar()">
     <header>
       <h1 class="mainheader">Automobile Database</h1>
-      
+
     </header>
 
     <div class="searchblock">
       <form action="search.php" method="get">
+        <!-- <legend>Car Information Input - Fill all parameters to search for specific car or leave all blank to see the whole database</legend> -->
+        <div class="makemodelyear" >
+          <fieldset>
+            <p>
+              <label>Make:</label>
+              <input name="make" type="text" pattern="[a-zA-Z]+"/>
+            </p>
 
-	<!--
-	    <legend>Car Information Input - Fill all parameters to search for specific car or leave all blank to see the whole database</legend>
-	    -->
-	<div class="makemodelyear" >
-	  <fieldset>
-	    <p>
-	      <label>Make:</label>
-	      <input name="make" type="text" pattern="[a-zA-Z]+"/> 
-	    </p>
+            <p>
+              <label>Model:</label>
+              <input name="model" type="text" pattern="[a-zA-Z]+"/>
+            </p>
 
-	    <p>
-	      <label>Model:</label>
-	      <input name="model" type="text" pattern="[a-zA-Z]+"/>
-	    </p>
+            <p>
+              <label>Year:</label>
+              <input name="year" type="text" pattern="\d{4}"/>
+            </p>
 
-	    <p>
-	      <label>Year:</label>
-	      <input name="year" type="text" pattern="\d{4}"/>
-	    </p>
+            <p>
+              <label>ID:</label>
+              <input name="id" type="text" pattern="\d{7}"/>
+            </p>
+          </fieldset>
+        </div>
+        <div class="typecolor">
+          <fieldset>
+            <label>Types of car:</label>
+            <select name="type" class="ui-selectmenu-button ui-widget ui-state-default ui-corner-top" id="selectmenu"> <span class="ui-icon ui-icon-triangle-1-s"></span>
+              <option name="checkbox" name="hybrid" value="hybrid">Hybrid</option>
+              <option name="checkbox" name="sport" value="sport">Sport</option>
+              <option name="checkbox" name="luxury" value="luxury">Luxury</option>
+              <option name="checkbox" name="economic" value="economic">Economic</option>
+              <option  selected disabled hidden value=''/>
+            </select>
+            <p>
+              <label>Color:</label>
+              <select name="color" class="ui-selectmenu-button ui-widget ui-state-default ui-corner-top">
+                <option name="color" value="white"/> White
+                <option name="color" value="black"/> Black
+                <option name="color" value="grey"/> Grey
+                <option name="color" value="pink"/> Pink
+                <option name="color" value="purple"/> Purple
+                <option name="color" value="brown"/> Brown
+                <option  selected disabled hidden value=''/>
+              </select>
+            </p>
+          </fieldset>
+        </div>
 
-	    <p>
-	      <label>ID:</label>
-	      <input name="id" type="text" pattern="\d{7}"/>
-	    </p>
-	  </fieldset>
+        <div class="submitbutton">
+          <p><input type="submit" /*style="width:200px; height:200px;"*/ value="Submit"/></p>
+        </div>
+		
+ 
+<select name="effects" id="effectTypes">
+  <option value="bounce">Bounce</option>
+  <option value="drop">Drop</option>
+  <option value="fade">Fade</option>
+  <option value="pulsate">Pulsate</option>
+  <option value="shake">Shake</option>
+  <option value="size">Half Size</option>
+  <option value="slide">Slide</option>
+</select>
+ 
+<button id="button" class="ui-state-default ui-corner-all">Run Effect</button>
+      
+	  <div class="toggler">
+ 	  	    <div id="effect" class="ui-widget-content ui-corner-all">
+    			   <div id="draggable" class="ui-widget-content">
+     			   		   <canvas       id = "canvas"
+               			          onclick = "changeBackground()"
+                    			    width = "300"
+                     				 height = "200"
+                      				 <p> Your browser does not support the canvas tag.</p>
+
+						   </canvas>
+				   </div>
+			</div>
 	</div>
-	
-	<div class="typecolor">
-	  <fieldset>
-	    <p>
-	      <label>Types of car:</label>
-		  <select>
-	      <option name="checkbox" name="hybrid" value="hybrid"/> Hybrid
-	      <option name="checkbox" name="sport" value="sport"/> Sport
-	      <option name="checkbox" name="luxury" value="luxury"/> Luxury
-	      <option name="checkbox" name="economic" value="economic"/> Economic
-		  <option  selected disabled hidden value=''/>
-		  </select>
-	    </p>
-
-	    <p>
-		Color:
-	      <select name="color">
-	      <option name="color" value="white"/> White
-	      <option name="color" value="black"/> Black
-	      <option name="color" value="grey"/> Grey
-	      <option name="color" value="pink"/> Pink
-	      <option name="color" value="purple"/> Purple
-	      <option name="color" value="brown"/> Brown
-		  <option  selected disabled hidden value=''/>
-		  </select>
-	    </p>
-	  </fieldset>
-	</div>
-
-	<div class="submitbutton">
-	  <p><input type="submit" /*style="width:200px; height:200px;"*/ value="Submit"/></p>
-	</div>
-	
-	<div id="draggable" class="ui-widget-content">
-	<canvas	id = "canvas"
-		onclick = "changeBackground()"
-		width = "300"
-		height = "200"	  
-		<p> Your browser does not support the canvas tag.</p>
-</canvas>
-</div>
 </form>
 </div>
 </body>
