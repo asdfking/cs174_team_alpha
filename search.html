@@ -24,14 +24,17 @@
       #draggable { width: 300px; height: 200px; padding: 0.5em; }
     </style>
     <script>
-      $(function() {
-      $( "#draggable" ).draggable();
-      });
+
+      $(init);
+      function init()
+      {
+      $("#dragCar").draggable();
+      }
 
       $(function() {
       $( "#slider" ).slider();
       });
-      
+
       $(function() {
       $( "#selectmenu" ).selectmenu();
       });
@@ -48,10 +51,7 @@
 
     <div class="searchblock">
       <form action="search.php" method="get">
-
-        <!--
-            <legend>Car Information Input - Fill all parameters to search for specific car or leave all blank to see the whole database</legend>
-            -->
+        <!-- <legend>Car Information Input - Fill all parameters to search for specific car or leave all blank to see the whole database</legend> -->
         <div class="makemodelyear" >
           <fieldset>
             <p>
@@ -96,7 +96,7 @@
                 <option name="color" value="brown"/> Brown
                 <option  selected disabled hidden value=''/>
               </select>
-            <p>
+            </p>
           </fieldset>
         </div>
 
@@ -104,15 +104,18 @@
           <p><input type="submit" /*style="width:200px; height:200px;"*/ value="Submit"/></p>
         </div>
 
-        <div id="draggable">
-          <canvas       id = "canvas"
-                        onclick = "changeBackground()"
-                        width = "300"
-                        height = "200"
-                        <p> Your browser does not support the canvas tag.</p>
+      </form>
+
+      <div id="dragCar">
+        <canvas       id = "canvas"
+                      onclick = "changeBackground()"
+                      width = "300"
+                      height = "200"
+                      <p> Your browser does not support the canvas tag.</p>
+
 </canvas>
 </div>
-</form>
+
 </div>
 </body>
 </html>
