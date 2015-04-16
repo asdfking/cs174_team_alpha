@@ -10,12 +10,9 @@
     <script src="carAnimation.js"></script>
     <script src="inputValidation.js"></script>
 
-    <!-- <script src="//code.jquery.com/jquery-1.10.2.js"></script> -->
-    <!-- <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
-    <link href="jquery-ui-1.11.4.custom/jquery-ui.min.css" rel="stylesheet">
-    <link href="jquery-ui-1.11.4.custom/jquery-ui.theme.min.css" rel="stylesheet">
-    <link href="jquery-ui-1.11.4.custom/jquery-ui.structure.min.css" rel="stylesheet">
-    <script src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	
 
 
 
@@ -23,13 +20,11 @@
     <style>
       #draggable { width: 300px; height: 200px; padding: 0.5em; }
     </style>
-    <script>
-
-      $(init);
-      function init()
-      {
-      $("#dragCar").draggable();
-      }
+    
+  <script>
+  $(function() {
+    $( "#draggable" ).draggable();
+  });
 
       $(function() {
       $( "#slider" ).slider();
@@ -39,7 +34,49 @@
       $( "#selectmenu" ).selectmenu();
       });
     </script>
-
+	<style>
+    .toggler { width: 500px; height: 200px; position: relative; }
+    #button { padding: .5em 1em; text-decoration: none; }
+    #effect { width: 240px; height: 135px; padding: 0.4em; position: relative; }
+    #effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+    .ui-effects-transfer { border: 2px dotted gray; }
+  </style>
+  <script>
+  $(function() {
+    // run the currently selected effect
+    function runEffect() {
+      // get effect type from
+      var selectedEffect = $( "#effectTypes" ).val();
+ 
+      // most effect types need no options passed by default
+      var options = {};
+      // some effects have required parameters
+      if ( selectedEffect === "scale" ) {
+        options = { percent: 0 };
+      } else if ( selectedEffect === "transfer" ) {
+        options = { to: "#button", className: "ui-effects-transfer" };
+      } else if ( selectedEffect === "size" ) {
+        options = { to: { width: 200, height: 60 } };
+      }
+ 
+      // run the effect
+      $( "#effect" ).effect( selectedEffect, options, 500, callback );
+    };
+ 
+    // callback function to bring a hidden box back
+    function callback() {
+      setTimeout(function() {
+        $( "#effect" ).removeAttr( "style" ).hide().fadeIn();
+      }, 1000 );
+    };
+ 
+    // set effect from select menu value
+    $( "#button" ).click(function() {
+      runEffect();
+      return false;
+    });
+  });
+  </script>
 
   </head>
 
@@ -103,19 +140,34 @@
         <div class="submitbutton">
           <p><input type="submit" /*style="width:200px; height:200px;"*/ value="Submit"/></p>
         </div>
+		
+ 
+<select name="effects" id="effectTypes">
+  <option value="bounce">Bounce</option>
+  <option value="drop">Drop</option>
+  <option value="fade">Fade</option>
+  <option value="pulsate">Pulsate</option>
+  <option value="shake">Shake</option>
+  <option value="size">Half Size</option>
+  <option value="slide">Slide</option>
+</select>
+ 
+<button id="button" class="ui-state-default ui-corner-all">Run Effect</button>
+      
+	  <div class="toggler">
+ 	  	    <div id="effect" class="ui-widget-content ui-corner-all">
+    			   <div id="draggable" class="ui-widget-content">
+     			   		   <canvas       id = "canvas"
+               			          onclick = "changeBackground()"
+                    			    width = "300"
+                     				 height = "200"
+                      				 <p> Your browser does not support the canvas tag.</p>
 
-      </form>
-
-      <div id="dragCar">
-        <canvas       id = "canvas"
-                      onclick = "changeBackground()"
-                      width = "300"
-                      height = "200"
-                      <p> Your browser does not support the canvas tag.</p>
-
-</canvas>
-</div>
-
+						   </canvas>
+				   </div>
+			</div>
+	</div>
+</form>
 </div>
 </body>
 </html>
