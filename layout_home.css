@@ -47,8 +47,7 @@
     text-decoration: none;
 
     margin-left: 90px;
-    margin-right: 90px;
-    
+    margin-right: 90px;    
 }
 .button-group a {
     color: rgba(0, 0, 0, 1);
@@ -65,10 +64,6 @@
 .button-group {
     float: none;
     margin: 0 0 0 0px;
-}
-
-#header-btn {
-    background-color: rgb(48, 97, 139);
 }
 
 /*BUTTONS IN HEADER
