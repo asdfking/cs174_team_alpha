@@ -7,6 +7,7 @@
     <!-- Linking to our scripts-->
     <link rel="shortcut icon" href="http://files.softicons.com/download/transport-icons/car-icon-by-nishad2m8/ico/Car.ico">
     <link rel="stylesheet" type="text/css" href="layout.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="global_header.css" media="screen"/> <!-- GLOBAL HEADER -->
     <script src="script.js"></script>
     <script src="carAnimation.js"></script>
     <script src="inputValidation.js"></script>
@@ -19,6 +20,9 @@
     <link href="jquery-ui-1.11.4.custom/jquery-ui.structure.min.css" rel="stylesheet"/>
     <script src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
 
+    <link href="http://fonts.googleapis.com/css?family=Raleway:600,400,200" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> <!-- BOOTSTRAP TEMPLATE-->    
+    
     <script>
       $(init);
       function init()
@@ -75,16 +79,34 @@
       });
       });
     </script>
+    
+  </head>  
+  
+  <body onload = "drawStaticCar()">
 
+    <div class="global-header">
+      <h1 class="mainheader" id="mainheader_id">Automobile Database</h1>
+      <div class="navigation-inner">
+	<p class="button-group">
+	  <button type="button" class="btn btn-xs btn-primary" id="home-btn"><a href="#" class="button">Home</a></button>
+	  <button type="button" class="btn btn-xs btn-primary" id="header-btn"><a href="#" class="button">News</a></button>
+	  <button type="button" class="btn btn-xs btn-primary" id="db-btn"><a href="#" class="button">Database</a></button>
+	  <button type="button" class="btn btn-xs btn-primary" id="header-btn"><a href="#" class="button">Nothing</a></button>
+	</p>
+      </div>
+    </div>
 
-  </head>
+    <!-- Appending header buttons to href-->
+    <script type="text/javascript">
+      document.getElementById("db-btn").onclick = function () {
+      location.href = "search.html";            
+      };
+      document.getElementById("home-btn").onclick = function () {
+      location.href = "index_home.html";
+      };
+    </script>
 
-  <body  onload = "drawStaticCar()">
-    <header>
-      <h1 class="mainheader">Automobile Database</h1>
-
-    </header>
-
+    
     <div class="searchblock">
       <form action="search.php" method="get">
 	<!-- <legend>Car Information Input - Fill all parameters to search for specific car or leave all blank to see the whole database</legend> -->

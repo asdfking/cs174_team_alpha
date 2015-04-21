@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Automobile Database</title>
     <script src="jquery-1.11.2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="global_header.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="layout_home.css" media="screen"/>
     <link rel="stylesheet" type"text/css" href="footer_home.css" media="screen"/>
     <link href="http://fonts.googleapis.com/css?family=Raleway:600,400,200" rel="stylesheet" type="text/css">
@@ -16,7 +17,7 @@
 
       <div class="navigation-inner">
 	<p class="button-group">
-	  <button type="button" class="btn btn-xs btn-primary" id="header-btn"><a href="#" class="button">Home</a></button>
+	  <button type="button" class="btn btn-xs btn-primary" id="home-btn"><a href="#" class="button">Home</a></button>
 	  <button type="button" class="btn btn-xs btn-primary" id="header-btn"><a href="#" class="button">News</a></button>
 	  <button type="button" class="btn btn-xs btn-primary" id="db-btn"><a href="#" class="button">Database</a></button>
 	  <button type="button" class="btn btn-xs btn-primary" id="header-btn"><a href="#" class="button">Nothing</a></button>
@@ -24,10 +25,15 @@
       </div>
     </div>
 
+    <!-- Appending header buttons to href-->
     <script type="text/javascript">
       document.getElementById("db-btn").onclick = function () {
-      location.href = "search.html";
+      location.href = "search.html";            
       };
+      document.getElementById("home-btn").onclick = function () {
+      location.href = "index_home.html";
+      };
+      
     </script>
 
     <!-- pic -->
@@ -37,7 +43,6 @@
     <hr class="featurette-divider"></hr>
     
     <!-- NEWS SECTION -->
-
    <!-- LEFT ORIENTED-->
     <div class="row featurette" id="rowfix">
       <div class="col-md-7 col-md-push-5">
