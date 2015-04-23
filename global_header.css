@@ -15,11 +15,10 @@
 }
 
 .main-header h1{
-    font-family: 'Raleway', Helvetica, Arial, sans-serif;
-    text-align: center;
 
-    width: 100%;
-    
+    text-align: center;  
+    width: 100%;    
+
     padding-top: 0px;
     padding-right: 0px;
     padding-bottom: 0px;
@@ -31,6 +30,7 @@
 }
 
 #mainheader_id {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
     color: rgb(141, 144, 147);
     margin-top: 0px;       
 }

@@ -1,21 +1,3 @@
-* { /* Applies for everything */
-    font-family: Verdana;
-}
-
-.mainheader {
-
-    position: relative;
-
-    top: 0%;
-
-    font-family: Futura;
-    text-align: center;
-
-    height: 50px;
-    width: 100%;
-
-    background-color: #174472;
-}
 
 body {
 
@@ -25,29 +7,6 @@ body {
     background-position: center;
 
 }
-
-/*
-.bigblockOne {
-
-    position: relative;
-    border-style: dotted;
-    height: 250px;
-    width: 50%;
-
-    background-color: #b0e0e6;
-
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-.insideblock {
-
-    text-align: center;
-
-}
-
-*/
 
 .searchblock {
 
@@ -117,27 +76,6 @@ body {
     margin-bottom: 10px;
 
 
-}
-
-.description { /* Description bottom of the page */
-
-    /* Positioning */
-    position: absolute;
-    right: 0;
-
-    bottom: 0;
-    width: 400px;
-    height: 100px;
-
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-
-    border-style: solid;
-    border-width: 10px;
-    border-color: #336699;
-    background-color: #999999;
 }
 
 .innerdescription {

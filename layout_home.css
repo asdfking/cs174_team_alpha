@@ -1,23 +1,5 @@
 
-* { /* Applies for everything */
-    font-family: 'Raleway';
-}
-
-/*
-MARKS DIVS
--------------------
-div { 
-    border-style: solid;
-    border-color: #336699;
-}
-*/
-
-.navigation-inner div {    
-    width: 60%;
-    text-align: center;
-}
-
-#picture-div {
+#picture-div { /* Background picture */
     width: 100%;
     height: 600px;
     background-image: url("http://www.isharearena.com/wp-content/uploads/2012/03/wallpaper-1789258.jpg");
