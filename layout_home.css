@@ -1,11 +1,11 @@
 
 #picture-div { /* Background picture */
     width: 100%;
-    height: 600px;
+    height: 550px;
     background-image: url("http://www.isharearena.com/wp-content/uploads/2012/03/wallpaper-1789258.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center;
+    background-position: 50% 75%;
 }
 
 #rowfix {
