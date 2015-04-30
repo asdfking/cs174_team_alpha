@@ -8,10 +8,10 @@
     <meta name="Description" content="">
     <link rel="shortcut icon" href="http://files.softicons.com/download/transport-icons/car-icon-by-nishad2m8/ico/Car.ico">
     <link rel="stylesheet" type="text/css" href="layout.css" media="screen"/>
-    <script src="carAnimation.js"></script> 
+    <script src="carAnimation.js"></script>
     <title>Document</title>
 
-    
+
   </head>
   <body onload = "init()">
     <h1 align="center">The car you're looking for is in the table and has these features:</h1>
@@ -24,6 +24,9 @@
 
 <p>
   <?php
+
+
+
      $carmake = filter_input(INPUT_GET, "make");
      $carmodel  = filter_input(INPUT_GET, "model");
      $caryear = filter_input(INPUT_GET, "year");
@@ -42,9 +45,9 @@
 
      if (filter_has_var(INPUT_GET, "economic")) {
      $output .= "<strong>Economic</strong></h1>";}
-     
+
      $query = "SELECT * FROM dmv, owner, accident where owner.id = accident.id and dmv.id = owner.id"; //Standard query
-     
+
      //This code block enables the user to search for one or more features of a car.
      if ((strlen($carmake) > 0) || (strlen($carmodel) > 0) || (strlen($caryear) > 0) || (strlen($carid) > 0) || (strlen($carcolor) > 0))
       {
@@ -58,17 +61,17 @@
       if(strlen($carid) > 0){if($multiplesettings){ $query .= " AND dmv.id = '$carid'";}else{$query .= "dmv.id = '$carid'"; $multiplesettings = 1;}}
       if(strlen($carcolor) > 0){if($multiplesettings){ $query .= " AND color = '$carcolor'";}else{$query .= "color = '$carcolor'"; $multiplesettings = 1;}}
       //$query .= " AND owner.id = '$carid'";
-      
-      }  //end if 
+
+      }  //end if
       $query .= ";";
-      
+
       try {
       $con = new PDO("mysql:host=localhost;dbname=cs174_hw1", "root", "qwerty");
       $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $result = $con->query($query);
       //checking if we got any results from the query
 
-      if($result->rowCount() == 0) { 
+      if($result->rowCount() == 0) {
       echo "Your search returned no results.";}
       else{
       //We got results; print them!
@@ -78,7 +81,7 @@
 	// Construct the header row of the HTML table.
 	print "            <tr>\n";
 	  foreach ($row as $field => $value) {
-	  print "                <th>$field</th>\n";}  
+	  print "                <th>$field</th>\n";}
 	  print "            </tr>\n";
 
 	// Fetch the matching database table rows.
@@ -88,9 +91,9 @@
 	foreach ($data as $row)
 	{
 	print "            <tr>\n";
-	  foreach ($row as $name => $value) 
+	  foreach ($row as $name => $value)
 	  {
-	  print "<td>$value</td>\n";}	
+	  print "<td>$value</td>\n";}
 	  print "            </tr>\n";
 	}  //end for loop
 	print "        </table>\n";
@@ -98,13 +101,13 @@
       }  //end try
       catch(PDOException $ex) {
       echo 'ERROR: '.$ex->getMessage();}
-      
+
       $query = "SELECT * FROM dmv, owner where owner.id = dmv.id "; //Standard query
       $query .= " AND ";
       //This code block enables the user to search for one or more features of a car.
       if ((strlen($carmake) > 0) || (strlen($carmodel) > 0) || (strlen($caryear) > 0) || (strlen($carid) > 0) || (strlen($carcolor) > 0))
       {
-      
+
       $andString = " AND ";
       $multiplesettings = 0; // to know if we have to use "AND"
       if(strlen($carmake) > 0){$query .= "make = '$carmake'"; $multiplesettings = 1;}
@@ -117,14 +120,14 @@
       }  //end if
       $query .= "dmv.ID not in (SELECT dmv.ID FROM dmv, owner, accident where owner.id = accident.id AND dmv.id = owner.id)";
       $query .= ";";
-      
+
       try {
       $con = new PDO("mysql:host=localhost;dbname=cs174_hw1", "root", "qwerty");
       $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $result = $con->query($query);
       //checking if we got any results from the query
 
-      if($result->rowCount() == 0) { 
+      if($result->rowCount() == 0) {
       echo "Your search returned no results.";}
       else{
       //We got results; print them!
@@ -134,7 +137,7 @@
 	// Construct the header row of the HTML table.
 	print "            <tr>\n";
 	  foreach ($row as $field => $value) {
-	  print "                <th>$field</th>\n";}  
+	  print "                <th>$field</th>\n";}
 	  print "            </tr>\n";
 
 	// Fetch the matching database table rows.
@@ -144,16 +147,16 @@
 	foreach ($data as $row)
 	{
 	print "            <tr>\n";
-	  foreach ($row as $name => $value) 
+	  foreach ($row as $name => $value)
 	  {
-	  print "<td>$value</td>\n";}	
+	  print "<td>$value</td>\n";}
 	  print "            </tr>\n";
 	}  //end for loop
 	print "        </table>\n";
       }  //end for loop
       }  //end try
       catch(PDOException $ex) {
-      echo 'ERROR: '.$ex->getMessage();}  
+      echo 'ERROR: '.$ex->getMessage();}
       ?>
 </p>
 
