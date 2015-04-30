@@ -74,15 +74,12 @@ body {
     margin-right: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-
-
 }
 
 .innerdescription {
     font-size: 12px;
     margin-left: 5px;
     margin-right: 5px;
-
 }
 /*various table styling*/
 table, td, th {
@@ -133,3 +130,15 @@ tr:nth-child(odd) {
 
 #draggable { width: 300px; height: 200px; padding: 0.5em; }
 #selectColor {font-size: 1em; font-style: normal;}
+
+/*
+  Added
+*/
+
+
+.ontheside {
+    width: 500px;
+    height: 200px;
+    position: relative;
+    float: right;
+}
