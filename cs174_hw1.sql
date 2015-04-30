@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2015 at 12:18 AM
+-- Generation Time: Apr 30, 2015 at 10:16 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -51,22 +51,23 @@ CREATE TABLE IF NOT EXISTS `dmv` (
   `Model` varchar(16) NOT NULL,
   `Color` varchar(16) NOT NULL,
   `Year` int(4) NOT NULL,
-  `ID` int(7) NOT NULL
+  `ID` int(7) NOT NULL,
+  `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dmv`
 --
 
-INSERT INTO `dmv` (`Make`, `Model`, `Color`, `Year`, `ID`) VALUES
-('Nissan', 'Rogue', 'Purple', 2012, 1234456),
-('Toyota', 'Prius', 'Black', 2008, 1234457),
-('Honda', 'Civic', 'Brown', 1997, 5895371),
-('Lexus', 'IS250', 'White', 2010, 7394184),
-('Ferrari', 'Enzo', 'blue', 2015, 7777777),
-('BMW', '328i', 'Grey', 1997, 8294638),
-('Ferrari', 'Enzo', 'red', 2014, 8888888),
-('Acura', 'RDX', 'Pink', 2014, 9581432);
+INSERT INTO `dmv` (`Make`, `Model`, `Color`, `Year`, `ID`, `image`) VALUES
+('Nissan', 'Rogue', 'Purple', 2012, 1234456, ''),
+('Toyota', 'Prius', 'Black', 2008, 1234457, ''),
+('Honda', 'Civic', 'Brown', 1997, 5895371, ''),
+('Lexus', 'IS250', 'White', 2010, 7394184, ''),
+('Ferrari', 'Enzo', 'blue', 2015, 7777777, ''),
+('BMW', '328i', 'Grey', 1997, 8294638, ''),
+('Ferrari', 'Enzo', 'red', 2014, 8888888, ''),
+('Acura', 'RDX', 'Pink', 2014, 9581432, '');
 
 -- --------------------------------------------------------
 
