@@ -20,7 +20,7 @@ $carmodel  = filter_input(INPUT_POST, 'model');
 $caryear = filter_input(INPUT_POST, 'year');
 $carid  = filter_input(INPUT_POST, 'id');
 $carcolor = filter_input(INPUT_POST, 'color');
-
+$carimage = filter_input(INPUT_POST, 'image');
 
 // $carmake = filter_input(INPUT_GET, "make");
 // $carmodel  = filter_input(INPUT_GET, "model");
@@ -42,11 +42,12 @@ $output .= "<strong>Luxurious </strong>";}
 if (filter_has_var(INPUT_GET, "economic")) {
 $output .= "<strong>Economic</strong></h1>";}
 
-$query = "SELECT * FROM dmv, owner, accident where owner.id = accident.id and dmv.id = owner.id"; //Standard query
+$query = "SELECT dmv.make, dmv.model, dmv.color, dmv.year, dmv.id, owner.name, owner.age, owner.address, owner.phone, accident.accidentid, accident.description FROM dmv, owner, accident where owner.id = accident.id and dmv.id = owner.id"; //Standard query
 
 //This code block enables the user to search for one or more features of a car.
 if ((strlen($carmake) > 0) || (strlen($carmodel) > 0) || (strlen($caryear) > 0) || (strlen($carid) > 0) || (strlen($carcolor) > 0))
 {
+$query = "SELECT * FROM dmv, owner, accident where owner.id = accident.id and dmv.id = owner.id";
 //$query .= " WHERE ";
 $andString = " AND ";
 $multiplesettings = 0; // to know if we have to use "AND"
@@ -100,11 +101,13 @@ print "        </table>\n";
 catch(PDOException $ex) {
 echo 'ERROR: '.$ex->getMessage();}
 
-$query = "SELECT * FROM dmv, owner where owner.id = dmv.id "; //Standard query
+$query = "SELECT dmv.make, dmv.model, dmv.color, dmv.year, dmv.id, owner.name, owner.age, owner.address, owner.phone FROM dmv, owner where owner.id = dmv.id "; //Standard query
+//$query = "SELECT * FROM dmv, owner where owner.id = dmv.id "; //Standard query
 $query .= " AND ";
 //This code block enables the user to search for one or more features of a car.
 if ((strlen($carmake) > 0) || (strlen($carmodel) > 0) || (strlen($caryear) > 0) || (strlen($carid) > 0) || (strlen($carcolor) > 0))
 {
+$query = "SELECT * FROM dmv, owner where owner.id = dmv.id and "; //Standard query
 
 $andString = " AND ";
 $multiplesettings = 0; // to know if we have to use "AND"
@@ -114,10 +117,10 @@ if(strlen($caryear) > 0){if($multiplesettings){ $query .= " AND year = '$caryear
 if(strlen($carid) > 0){if($multiplesettings){ $query .= " AND dmv.id = '$carid'";}else{$query .= "dmv.id = '$carid'"; $multiplesettings = 1;}}
 if(strlen($carcolor) > 0){if($multiplesettings){ $query .= " AND color = '$carcolor'";}else{$query .= "color = '$carcolor'"; $multiplesettings = 1;}}
 $query .= " AND ";
-//$query .= " AND owner.id = '$carid'";
+//$query .= " AND owner.id = '$carid' ";
 }  //end if
 
-$query .= "dmv.ID not in (SELECT dmv.ID FROM dmv, owner, accident where owner.id = accident.id AND dmv.id = owner.id)";
+$query .= "dmv.id not in (SELECT accident.id FROM dmv, accident where dmv.id = accident.id)";
 $query .= ";";
 
 try {
