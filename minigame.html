@@ -106,30 +106,32 @@
       };
     </script>
 
-    <!-- CAR EFFECT BELOW -->    
-    <select name="effects" id="effectTypes">
-      <option value="bounce">Bounce</option>
-      <option value="drop">Drop</option>
-      <option value="fade">Fade</option>
-      <option value="pulsate">Pulsate</option>
-      <option value="shake">Shake</option>
-      <option value="size">Half Size</option>
-      <option value="slide">Slide</option>
-    </select>
+    <!-- CAR EFFECT BELOW -->
+    <div class="container">
+      <select name="effects" id="effectTypes">
+	<option value="bounce">Bounce</option>
+	<option value="drop">Drop</option>
+	<option value="fade">Fade</option>
+	<option value="pulsate">Pulsate</option>
+	<option value="shake">Shake</option>
+	<option value="size">Half Size</option>
+	<option value="slide">Slide</option>
+      </select>
 
-    <div id = ontheside>
-      <button id="button" class="ui-state-default ui-corner-all">Run Effect</button>
+      <div id = ontheside>
+	<button id="button" class="ui-state-default ui-corner-all">Run Effect</button>
 
-      <div class="toggler">
-	<div id="effect">
-	  <div id="dragCar">
-	    <canvas       id = "canvas"
-			  onclick = "changeBackground()"
-			  width = "300"
-			  height = "200"
-			  <p> Your browser does not support the canvas tag.</p>>
+	<div class="toggler">
+	  <div id="effect">
+	    <div id="dragCar">
+	      <canvas       id = "canvas"
+			    onclick = "changeBackground()"
+			    width = "300"
+			    height = "200"
+			    <p> Your browser does not support the canvas tag.</p>>
 
-	    </canvas>
+	      </canvas>
+	    </div>
 	  </div>
 	</div>
       </div>

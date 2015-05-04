@@ -3,17 +3,6 @@
 
   <head>
     <meta charset="UTF-8">
-
-    <title>DMV</title>
-    <!-- Linking to our scripts-->
-    <link rel="shortcut icon" href="http://files.softicons.com/download/transport-icons/car-icon-by-nishad2m8/ico/Car.ico">
-    <link rel="stylesheet" type="text/css" href="layout.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="global_header.css" media="screen"/> <!-- GLOBAL HEADER -->
-    <script src="script.js"></script>
-    <script src="carAnimation.js"></script>
-    <script src="inputValidation.js"></script>
-
-
     <title>Automobile Database</title>
 
     <!-- Torjus -->
@@ -30,7 +19,6 @@
     <script src="carAnimation.js"></script>
     <script src="inputValidation.js"></script>
     
-
     <!-- Jquery -->
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
@@ -39,78 +27,6 @@
     <link href="jquery-ui-1.11.4.custom/jquery-ui.structure.min.css" rel="stylesheet"/>
     <script src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
 
-<<<<<<< Updated upstream
-
-    <link href="http://fonts.googleapis.com/css?family=Raleway:600,400,200" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> <!-- BOOTSTRAP TEMPLATE-->
-
-    <script>
-      $(init);
-      function init()
-      {
-      $("#dragCar").draggable();
-      }
-
-      $(function() {
-      $( "#slider" ).slider();
-      });
-
-      $(function() {
-      $( "#selectmenu" ).selectmenu();
-      });
-
-      $(function() {
-      $( "#selectColor" ).selectmenu();
-      });
-    </script>
-
-    <script>
-      $(function() {
-      // run the currently selected effect
-      function runEffect() {
-      // get effect type from
-      var selectedEffect = $( "#effectTypes" ).val();
-
-      // most effect types need no options passed by default
-      var options = {};
-      // some effects have required parameters
-      if ( selectedEffect === "scale" ) {
-      options = { percent: 0 };
-      } else if ( selectedEffect === "transfer" ) {
-      options = { to: "#button", className: "ui-effects-transfer" };
-      } else if ( selectedEffect === "size" ) {
-      options = { to: { width: 200, height: 60 } };
-      }
-
-      // run the effect
-      $( "#effect" ).effect( selectedEffect, options, 500, callback );
-      };
-
-      // callback function to bring a hidden box back
-      function callback() {
-      setTimeout(function() {
-      $( "#effect" ).removeAttr( "style" ).hide().fadeIn();
-      }, 1000 );
-      };
-
-      // set effect from select menu value
-      $( "#button" ).click(function() {
-      runEffect();
-      return false;
-      });
-      });
-
-
-      <!-- $( "#submitbutton" ).click(submit()); -->
-      <!-- window.onload = function(){ -->
-      <!-- // your code -->
-      <!-- document.getElementById("submitbutton").onclick = submit(); -->
-      <!-- }; -->
-      
-    </script>
-
-=======
->>>>>>> Stashed changes
   </head>
 
     <div class="global-header">
@@ -139,8 +55,6 @@
     </script>
 
     <div class="searchblock">
-
-      <!-- <legend>Car Information Input - Fill all parameters to search for specific car or leave all blank to see the whole database</legend> -->
       <div class="makemodelyear">
 	<div id="carInfo">
 	  <form action="submit()" method="get">
@@ -168,7 +82,7 @@
 	</div>
       </div>
       <div class="typecolor">
-	<fieldset>
+	
 	  <label>Types of car:</label>
 	  <select name="type" class="ui-selectmenu-button ui-widget ui-state-default ui-corner-top" id="selectmenu"> <span class="ui-icon ui-icon-triangle-1-s"></span>
 	    <option name="checkbox" name="hybrid" value="hybrid">Hybrid</option>
@@ -189,7 +103,7 @@
 	      <option  selected disabled hidden value=''/>
 	    </select>
 	  </p>
-	</fieldset>
+
       </form>
       </div>
 

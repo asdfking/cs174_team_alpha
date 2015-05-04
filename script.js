@@ -34,7 +34,7 @@ function loadTable(data, status)
     $("#output").html(data);
 }
 
-
+//Not used for now
 function changeBackground(){
     var cars = ["url('http://wallpapers55.com/wp-content/uploads/2013/10/Car-Dekstop-Background-Wallpaper.jpg')",
 		"url('http://www.ibackgroundwallpaper.com/wp-content/uploads/2014/04/lamborghini-gallardo-luxury-car-wallpaper.jpg')",
