@@ -5,6 +5,136 @@
   <head>
     <meta charset="UTF-8">
     <title>Automobile Database</title>
+
+    <!-- GLOBAL HEADER -->
+    <link rel="stylesheet" type="text/css" href="global_header.css" media="screen"/>
+    <!-- Font 'Raleway'-->
+    <link href="http://fonts.googleapis.com/css?family=Raleway:600,400,200" rel="stylesheet" type="text/css">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <script src="carAnimation.js"></script>
+    
+    <!-- Jquery -->
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link href="jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet"/>
+    <link href="jquery-ui-1.11.4.custom/jquery-ui.theme.min.css" rel="stylesheet"/>
+    <link href="jquery-ui-1.11.4.custom/jquery-ui.structure.min.css" rel="stylesheet"/>
+    <script src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+
+    <!-- CAR EFFECTS -->
+    <script>
+      $(init);
+      function init()
+      {
+      $("#dragCar").draggable();
+      }
+
+      $(function() {
+      $( "#slider" ).slider();
+      });
+
+      $(function() {
+      $( "#selectmenu" ).selectmenu();
+      });
+
+      $(function() {
+      $( "#selectColor" ).selectmenu();
+      });
+    </script>
+
+    <script>
+      $(function() {
+      function runEffect() {
+      var selectedEffect = $( "#effectTypes" ).val();
+
+      var options = {};
+      if ( selectedEffect === "scale" ) {
+      options = { percent: 0 };
+      } else if ( selectedEffect === "transfer" ) {
+      options = { to: "#button", className: "ui-effects-transfer" };
+      } else if ( selectedEffect === "size" ) {
+      options = { to: { width: 200, height: 60 } };
+      }
+
+      $( "#effect" ).effect( selectedEffect, options, 500, callback );
+      };
+
+      function callback() {
+      setTimeout(function() {
+      $( "#effect" ).removeAttr( "style" ).hide().fadeIn();
+      }, 1000 );
+      };
+
+      $( "#button" ).click(function() {
+      runEffect();
+      return false;
+      });
+      });      
+    </script>
+
+    
   </head>
 
+  <body>
+
+  <body onload = "drawStaticCar()">
+    
+    <div class="global-header">
+      <h1 class="mainheader" id="mainheader_id">Automobile Database</h1>
+      <div class="navigation-inner">
+	<p class="button-group">
+	  <button type="button" class="btn btn-xs btn-primary" id="home-btn"><a href="#" class="button">Home</a></button>
+	  <button type="button" class="btn btn-xs btn-primary" id="header-btn"><a href="#" class="button">News</a></button>
+	  <button type="button" class="btn btn-xs btn-primary" id="db-btn"><a href="#" class="button">Database</a></button>
+	  <button type="button" class="btn btn-xs btn-primary" id="minigame-btn"><a href="#" class="button">Mini-Game</a></button>
+	</p>
+      </div>
+    </div>
+
+     <!-- Appending header buttons to href-->
+    <script type="text/javascript">
+      document.getElementById("db-btn").onclick = function() {
+      location.href = "search.html";
+      };
+      document.getElementById("home-btn").onclick = function() {
+      location.href = "index_home.html";
+      };
+      document.getElementById("minigame-btn").onclick = function() {
+      location.href = "minigame.html";
+      };
+    </script>
+
+    <!-- CAR EFFECT BELOW -->    
+    <select name="effects" id="effectTypes">
+      <option value="bounce">Bounce</option>
+      <option value="drop">Drop</option>
+      <option value="fade">Fade</option>
+      <option value="pulsate">Pulsate</option>
+      <option value="shake">Shake</option>
+      <option value="size">Half Size</option>
+      <option value="slide">Slide</option>
+    </select>
+
+    <div id = ontheside>
+      <button id="button" class="ui-state-default ui-corner-all">Run Effect</button>
+
+      <div class="toggler">
+	<div id="effect">
+	  <div id="dragCar">
+	    <canvas       id = "canvas"
+			  onclick = "changeBackground()"
+			  width = "300"
+			  height = "200"
+			  <p> Your browser does not support the canvas tag.</p>>
+
+	    </canvas>
+	  </div>
+	</div>
+      </div>
+    </div>
+    
+  </body>
+  
 </html>

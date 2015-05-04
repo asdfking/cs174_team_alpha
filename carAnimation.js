@@ -1,3 +1,4 @@
+
 function drawStaticCar()
 {
     var canvas = document.getElementById('canvas');
@@ -81,19 +82,20 @@ function init()
 
 function draw()
 {
-	con.clearRect(0,0,CANVAS_W,CANVAS_H);
+    con.clearRect(0,0,CANVAS_W,CANVAS_H);
     con.strokeStyle = "white";
     con.fillStyle = "transparent";
     con.fillRect(0, 0, CANVAS_W, CANVAS_H);
     con.strokeRect(0, 0, CANVAS_W, CANVAS_H);                   
     con.save();
-	
+    
     con.drawImage(image, x, 50, IMAGE_W, IMAGE_H);
-	
+    
     x += 4;
-    if(x > 700)
+    if(x > 700) {
 	x=0;
-	
+    }
+    
     con.restore();
-	
+    
 }    
