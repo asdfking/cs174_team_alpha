@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `dmv` (
   `Color` varchar(16) NOT NULL,
   `Year` int(4) NOT NULL,
   `ID` int(7) NOT NULL,
-  `image` varchar(100) NOT NULL
+  `image` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -60,14 +60,14 @@ CREATE TABLE IF NOT EXISTS `dmv` (
 --
 
 INSERT INTO `dmv` (`Make`, `Model`, `Color`, `Year`, `ID`, `image`) VALUES
-('Nissan', 'Rogue', 'Purple', 2012, 1234456, ''),
-('Toyota', 'Prius', 'Black', 2008, 1234457, ''),
-('Honda', 'Civic', 'Brown', 1997, 5895371, ''),
-('Lexus', 'IS250', 'White', 2010, 7394184, ''),
-('Ferrari', 'Enzo', 'blue', 2015, 7777777, ''),
-('BMW', '328i', 'Grey', 1997, 8294638, ''),
-('Ferrari', 'Enzo', 'red', 2014, 8888888, ''),
-('Acura', 'RDX', 'Pink', 2014, 9581432, '');
+('Nissan', 'Rogue', 'Purple', 2012, 1234456, '<img src="http://www.wallpapercarhd.com/wp-content/uploads/2014/05/nissan-car-review-31.jpg" height="200">'),
+('Toyota', 'Prius', 'Black', 2008, 1234457, '<image src="http://www.moibibiki.com/images/toyota-prius-black-4.jpg" height="200">'),
+('Honda', 'Civic', 'Brown', 1997, 5895371, '<image src="http://images.thecarconnection.com/med/1997-honda-civic-ex_100026723_m.jpg" height="200">'),
+('Lexus', 'IS250', 'White', 2010, 7394184, '<image src="http://upload.wikimedia.org/wikipedia/commons/a/a7/2010-2011_Lexus_IS_250_(GSE20R_MY11)_Prestige_sedan_(2011-04-22)_01.jpg" height="200">'),
+('Ferrari', 'Enzo', 'blue', 2015, 7777777, '<image src="http://www.autoguide.com/auto-news/gallery/gallery.php/d/328242-4/peter_simon_ferrari_enzo_1.jpg" height="200">'),
+('BMW', '328i', 'Grey', 1997, 8294638, '<image src="http://images.gtcarlot.com/pictures/51538506.jpg" height="200">'),
+('Ferrari', 'Enzo', 'red', 2014, 8888888, '<image src="http://media.caranddriver.com/images/13q2/514656/2014-ferrari-f70-artists-rendering-photo-514659-s-1280x782.jpg" height="200">'),
+('Acura', 'RDX', 'Pink', 2014, 9581432, '<image src="http://media.dealerfire.com/websites/1011/content/2014-Acura-RDX-A_original.jpg" height="200">');
 
 -- --------------------------------------------------------
 
@@ -94,7 +94,8 @@ INSERT INTO `owner` (`ID`, `Name`, `Age`, `Address`, `Phone`) VALUES
 (7394184, 'Justin Beiber', 20, '431 Beverly Hills, CA', '253-874-4672'),
 (8294638, 'Test Testerson', 44, '5633 Rodeo Dr., CA', '111-867-5309'),
 (8888888, 'Mr. Rich', 29, 'Beverly Hills street 31', '847364758419'),
-(9581432, 'John Smith', 80, '321 Blossom Ave., CA', '654-876-2341');
+(9581432, 'John Smith', 80, '321 Blossom Ave., CA', '654-876-2341'),
+(7777777, 'James Bond', 70, '512 Bond Ave., CA', '007-007-0070');
 
 --
 -- Indexes for dumped tables
