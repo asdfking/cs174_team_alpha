@@ -13,20 +13,19 @@ body {
 
 .field{
     display: inline-block;
+	margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
 }
-.field2{
-	display: inline-block;
-	float: right;
-}
+
 #carInfo{
 	display: inline-block;
-    width: 1100px;
+    width: 90%;
     height: auto;
-    
 }
 #besidefields{
 	display: inline-block;
-    width: 1100px;
+    width: auto;
     height: auto;
     
 }
@@ -86,7 +85,7 @@ body {
 
 #submitbutton {
 	display: inline-block;
-    float: right;
+    
 	
 	margin-left: 2px;
     margin-right: 2px;

@@ -1,3 +1,4 @@
+
 /*
   script.js - Javascript for the automobile database.
   Put all javascript code in here.
