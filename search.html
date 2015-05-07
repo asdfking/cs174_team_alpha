@@ -35,7 +35,7 @@
     <div class="navigation-inner">
       <p class="button-group">
 	<button type="button" class="btn btn-xs btn-primary" id="home-btn"><a href="#" class="button">Home</a></button>
-	<button type="button" class="btn btn-xs btn-primary" id="header-btn"><a href="#" class="button">News</a></button>
+	<button type="button" class="btn btn-xs btn-primary" id="news-btn"><a href="#" class="button">News</a></button>
 	<button type="button" class="btn btn-xs btn-primary" id="db-btn"><a href="#" class="button">Database</a></button>
 	<button type="button" class="btn btn-xs btn-primary" id="minigame-btn"><a href="#" class="button">Mini-Game</a></button>
       </p>
@@ -53,9 +53,12 @@
     document.getElementById("minigame-btn").onclick = function() {
     location.href = "minigame.html";
     };
-	$(".submitbutton").on("click",".submitComment",function(event){
+    document.getElementById("news-btn").onclick = function() {
+    location.href = "http://autoweek.com/car-news";
+    };
+    $(".submitbutton").on("click",".submitComment",function(event){
     alert('abc');
-});
+    });
   </script>
 
   <div class="searchblock">
