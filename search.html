@@ -30,107 +30,108 @@
 
   </head>
 
-  <div class="global-header">
-    <h1 class="mainheader" id="mainheader_id">Automobile Database</h1>
-    <div class="navigation-inner">
-      <p class="button-group">
-	<button type="button" class="btn btn-xs btn-primary" id="home-btn"><a href="#" class="button">Home</a></button>
-	<button type="button" class="btn btn-xs btn-primary" id="news-btn"><a href="#" class="button">News</a></button>
-	<button type="button" class="btn btn-xs btn-primary" id="db-btn"><a href="#" class="button">Database</a></button>
-	<button type="button" class="btn btn-xs btn-primary" id="minigame-btn"><a href="#" class="button">Mini-Game</a></button>
-      </p>
-    </div>
-  </div>
-
-  <!-- Appending header buttons to href-->
-  <script type="text/javascript">
-    document.getElementById("db-btn").onclick = function () {
-    location.href = "search.html";
-    };
-    document.getElementById("home-btn").onclick = function () {
-    location.href = "index_home.html";
-    };
-    document.getElementById("minigame-btn").onclick = function() {
-    location.href = "minigame.html";
-    };
-    document.getElementById("news-btn").onclick = function() {
-    location.href = "http://autoweek.com/car-news";
-    };
-    $(".submitbutton").on("click",".submitComment",function(event){
-    alert('abc');
-    });
-  </script>
-
-  <div class="searchblock">
-    <div class="greybox">
-      <div id="carInfo">
-	<form>
-	  <fieldset id="besidefields">
-	    <div class="field">
-	      <p>
-		<!-- <label>Make:</label> -->
-		<input name="make" type="text" placeholder="Make" pattern="[a-zA-Z]+"/>
-	      </p>
-	    </div>
-	    <div class="field">
-	      <p>
-		<!-- <label>Model:</label> -->
-		<input name="model" type="text" placeholder="Model" pattern="[a-zA-Z]+"/>
-	      </p>
-	    </div>
-	    <div class="field">
-	      <p>
-		<!-- <label>Year:</label> -->
-		<input name="year" type="text" placeholder="Year" pattern="\d{4}"/>
-	      </p>
-	    </div>
-
-	    <div class="field">
-	      <p>
-		<!-- <label>ID:</label> -->
-		<input name="id" type="text" placeholder="Car ID" pattern="\d{7}"/>
-	      </p>
-	    </div>
-	  
-	  
-	  <div class="field">  
-	    <label>Types of car:</label>
-	    <select name="type" class="ui-selectmenu-button ui-widget ui-state-default ui-corner-top" id="selectmenu"> <span class="ui-icon ui-icon-triangle-1-s"></span>
-	      <option name="checkbox" name="hybrid" value="hybrid">Hybrid</option>
-	      <option name="checkbox" name="sport" value="sport">Sport</option>
-	      <option name="checkbox" name="luxury" value="luxury">Luxury</option>
-	      <option name="checkbox" name="economic" value="economic">Economic</option>
-	      <option  selected disabled hidden value=''/>
-	    </select>
-	  </div>
-	  
-	  <div class="field">
-	    <label>Color:</label>
-	    <select name="color" class="ui-selectmenu-button ui-widget ui-state-default ui-corner-top" id="selectColor"> <span class="ui-icon ui-icon-triangle-1-s"></span>
-	      <option name="color" value="white">White</option>
-	      <option name="color" value="black">Black</option>
-	      <option name="color" value="grey">Grey</option>
-	      <option name="color" value="pink">Pink</option>
-	      <option name="color" value="purple">Purple</option>
-	      <option name="color" value="brown">Brown</option>
-	      <option  selected disabled hidden value=''/>
-	    </select>
-	  </div>
-	  
-	  </fieldset>
-	  
+  <body>
+    
+    <div class="global-header">
+      <h1 class="mainheader" id="mainheader_id">Automobile Database</h1>
+      <div class="navigation-inner">
+	<p class="button-group">
+	  <button type="button" class="btn btn-xs btn-primary" id="home-btn"><a href="#" class="button">Home</a></button>
+	  <button type="button" class="btn btn-xs btn-primary" id="news-btn"><a href="#" class="button">News</a></button>
+	  <button type="button" class="btn btn-xs btn-primary" id="db-btn"><a href="#" class="button">Database</a></button>
+	  <button type="button" class="btn btn-xs btn-primary" id="minigame-btn"><a href="#" class="button">Mini-Game</a></button>
+	</p>
       </div>
-      </form>
-	  <button id="submitbutton" onclick="window.onload = submit()">Search</button>
     </div>
-  </div>
-  
-  <!-- <button id="submitbutton" onclick="window.onload = submit()">Search</button> -->
-  <!-- <p><input type="submit" style="width:200px", "height:200px"; value="Submit"/></p> -->
+
+    <!-- Appending header buttons to href-->
+    <script type="text/javascript">
+      document.getElementById("db-btn").onclick = function () {
+      location.href = "search.html";
+      };
+      document.getElementById("home-btn").onclick = function () {
+      location.href = "index_home.html";
+      };
+      document.getElementById("minigame-btn").onclick = function() {
+      location.href = "minigame.html";
+      };
+      document.getElementById("news-btn").onclick = function() {
+      location.href = "http://autoweek.com/car-news";
+      };
+      $(".submitbutton").on("click",".submitComment",function(event){
+      alert('abc');
+      });
+    </script>
+
+    <div class="searchblock">
+      <div class="greybox">
+	<div id="carInfo">
+	  <form>
+	    <fieldset id="besidefields">
+	      <div class="field">
+		<p>
+		  <!-- <label>Make:</label> -->
+		  <input name="make" type="text" placeholder="Make" pattern="[a-zA-Z]+"/>
+		</p>
+	      </div>
+	      <div class="field">
+		<p>
+		  <!-- <label>Model:</label> -->
+		  <input name="model" type="text" placeholder="Model" pattern="[a-zA-Z]+"/>
+		</p>
+	      </div>
+	      <div class="field">
+		<p>
+		  <!-- <label>Year:</label> -->
+		  <input name="year" type="text" placeholder="Year" pattern="\d{4}"/>
+		</p>
+	      </div>
+
+	      <div class="field">
+		<p>
+		  <!-- <label>ID:</label> -->
+		  <input name="id" type="text" placeholder="Car ID" pattern="\d{7}"/>
+		</p>
+	      </div>
+	      
+	      
+	      <div class="field">  
+		<label>Types of car:</label>
+		<select name="type" class="ui-selectmenu-button ui-widget ui-state-default ui-corner-top" id="selectmenu"> <span class="ui-icon ui-icon-triangle-1-s"></span>
+		  <option name="checkbox" name="hybrid" value="hybrid">Hybrid</option>
+		  <option name="checkbox" name="sport" value="sport">Sport</option>
+		  <option name="checkbox" name="luxury" value="luxury">Luxury</option>
+		  <option name="checkbox" name="economic" value="economic">Economic</option>
+		  <option  selected disabled hidden value=''/>
+		</select>
+	      </div>
+	      
+	      <div class="field">
+		<label>Color:</label>
+		<select name="color" class="ui-selectmenu-button ui-widget ui-state-default ui-corner-top" id="selectColor"> <span class="ui-icon ui-icon-triangle-1-s"></span>
+		  <option name="color" value="white">White</option>
+		  <option name="color" value="black">Black</option>
+		  <option name="color" value="grey">Grey</option>
+		  <option name="color" value="pink">Pink</option>
+		  <option name="color" value="purple">Purple</option>
+		  <option name="color" value="brown">Brown</option>
+		  <option  selected disabled hidden value=''/>
+		</select>
+	      </div>
+	      
+	    </fieldset>
+	    
+	</div>
+	</form>
+	<button id="submitbutton" onclick="window.onload = submit()">Search</button>
+      </div>
+    </div>
+    
+    <!-- <button id="submitbutton" onclick="window.onload = submit()">Search</button> -->
+    <!-- <p><input type="submit" style="width:200px", "height:200px"; value="Submit"/></p> -->
 </div>
 
 <!-- dynamic ajax -->
 <div id="output"></div>
-
 </body>
 </html>
