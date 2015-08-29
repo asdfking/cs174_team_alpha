@@ -1,3 +1,3 @@
-# cs174_team_alpha
+# Car Enthusiast Website
 
-asdf
+A simple site for including a car database and some more stuff.
